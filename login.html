@@ -22,17 +22,69 @@
         <div class="titleBox"></div>
         <!-- 登录区 -->
         <div class="login-box">
-            <h1>222</h1>
-            <a href="javascript:;" id="link_reg">去注册账号</a>
+            <!-- 登录表单 -->
+            <form class="layui-form" id="form_login" target="_blank">
+                <!-- 用户登录 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input value="zwq005" type="text" name="username" required lay-verify="required"
+                        placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 密码表单 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input value="000000" type="text" name="password" required lay-verify="required|pwd"
+                        placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 提交按钮  lay-submit 这个属性必须存在后期绑定提交事件用-->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit
+                        lay-filter="formDemo">登录</button>
+                </div>
+                <!-- 注册账号提示 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_reg">去注册账号</a>
+                </div>
+            </form>
         </div>
         <!-- 注册区 -->
         <div class="reg-box">
-            <h1>333</h1>
-            <a href="javascript:;" id="link_login">去登录</a>
+            <!-- 注册表单 -->
+            <form class="layui-form" id="form_reg">
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 注册密码表单 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 确认密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pwd|repwd"
+                        placeholder="请再次确认密码" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 提交按钮  lay-submit 这个属性必须存在后期绑定提交事件用-->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>注册</button>
+                </div>
+                <!-- 注册账号 -->
+                <div class="layui-form-item links">
+                    <a href="javascript:;" id="link_login">去登录</a>
+                </div>
+            </form>
         </div>
     </div>
+    <!-- 引入layyui 表单验证格式js -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
     <!-- 引入jq文件 -->
     <script src="/assets/lib/jquery.js"></script>
+    <!-- 引入封装的地址函数 -->
+    <script src="/assets/js/baseAPI.js"></script>
     <!-- 引入自己的文件 -->
     <script src="/assets/js/login.js"></script>
 </body>
