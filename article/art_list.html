@@ -15,6 +15,22 @@
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
             <!-- 筛选区 -->
+            <form class="layui-form" id="form-search">
+                <div class="layui-form-item layui-inline">
+                    <select name="cate_id"></select>
+                </div>
+                <div class="layui-form-item layui-inline">
+                    <select name="state">
+                        <option value="">所有状态</option>
+                        <option value="已发布">已发布</option>
+                        <option value="草稿">草稿</option>
+                    </select>
+                </div>
+                <div class="layui-form-item layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+                </div>
+            </form>
+
             <!-- 文章列表 -->
             <table class="layui-table">
                 <colgroup>
@@ -39,6 +55,7 @@
             </table>
 
             <!-- 分页区域 -->
+            <div id="test1"></div>
         </div>
     </div>
 
@@ -52,9 +69,17 @@
             <td>{{$value.state}} </td>
             <td>
                 <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                <button id="" data-id="{{$value.Id}}" type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete">删除</button>
             </td>
         </tr>
+        {{/each}}
+    </script>
+
+    <!-- 文章列表分类筛选模板引擎 -->
+    <script type="text/html" id="tpl-cate">
+        <option value="">所有类别</option>
+        {{each data}}
+        <option value="{{$value.Id}}"> {{$value.name}} </option>
         {{/each}}
     </script>
 
